@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>게시판</title>
+</head>
+<body>
+
+    <button sec:authorize="isAuthenticated()" onclick="location.href= '/logout'">로그아웃</button>
+
+    <h1>게시판 메인입니당</h1>
+    <table border="1" width="500">
+        <thead>
+        <tr>
+            <td>순번</td>
+            <td>제목</td>
+            <td>작성자</td>
+            <td sec:authorize="isAuthenticated()">삭제버튼</td>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>게시물 제목1</td>
+            <td>james</td>
+            <td sec:authorize="isAuthenticated()"><button th:if="${#authentication.name} == 'tom'">삭제</button></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>게시물 제목2</td>
+            <td>tom</td>
+            <td sec:authorize="isAuthenticated()"><button >삭제</button></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>게시물 제목3</td>
+            <td>james</td>
+            <td sec:authorize="isAuthenticated()"><button>삭제</button></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>게시물 제목4</td>
+            <td>jerry</td>
+            <td sec:authorize="isAuthenticated()"><button>삭제</button></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>게시물 제목5</td>
+            <td>tom</td>
+            <td sec:authorize="isAuthenticated()"><button>삭제</button></td>
+        </tr>
+        </tbody>
+
+    </table>
+
+
+
+</body>
+</html>

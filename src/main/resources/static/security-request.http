@@ -1,0 +1,14 @@
+POST http://localhost:8080/memeber
+X-Csrf-Token: ee623718-37f5-4b1a-a0b7-c9ec9b93fdbb
+Content-Type: text/plain
+
+This is request data
+###
+GET http://localhost:8080/hello
+Authorization: Basic john 123
+###
+GET http://localhost:8080/hello
+Authorization: Basic user 35ac6e5f-c27d-45c8-b9a4-97726f96938e
+###
+GET http://localhost:8080/hello
+Authorization: Basic james 456
